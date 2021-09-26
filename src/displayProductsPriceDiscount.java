@@ -53,11 +53,9 @@ public class displayProductsPriceDiscount {
         if (sumOfPrices < 1000) {
             int howMuchMoreINeed = 1000 - sumOfPrices;
             System.out.println("Spend " + howMuchMoreINeed + " $ to get the discount. Do you want to continue?");
-        } else if (sumOfPrices > 1000 && sumOfPrices < 10000) {
-            int discountFromSum = (sumOfPrices * 10) / 100;
-            System.out.println("Congrats, you saved " + discountFromSum + " $");
         } else {
-            int discountFromSum = (sumOfPrices * 20) / 100;
+            int appliedDiscount = sumOfPrices > 1000 && sumOfPrices < 10000 ? 10 : 20;
+            int discountFromSum = (sumOfPrices * appliedDiscount) / 100;
             System.out.println("Congrats, you saved " + discountFromSum + " $");
         }
     }
